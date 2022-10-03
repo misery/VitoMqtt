@@ -13,10 +13,12 @@ RUN wget -O vcontrold.tar.gz https://github.com/openv/vcontrold/releases/downloa
 
 
 FROM alpine:$ALPINE_VERSION
-RUN apk upgrade -a -U && apk add tini mosquitto-clients libxml2
+RUN apk upgrade -a -U && apk add mosquitto-clients libxml2 supervisor
 
 COPY --from=builder /usr/sbin/vcontrold /usr/sbin/vcontrold
 COPY --from=builder /usr/bin/vclient /usr/bin/vclient
+COPY vcontrold.xml /etc/vcontrold/vcontrold.xml
+COPY vito.xml /etc/vcontrold/vito.xml
+COPY data /data/
 
-ENTRYPOINT ["/sbin/tini", "--"]
-CMD ["/usr/bin/vclient"]
+ENTRYPOINT ["supervisord", "-c", "/data/supervisord.conf"]
