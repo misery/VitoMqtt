@@ -8,7 +8,7 @@ services:
       - /dev/ttyUSB0
     environment:
       - MQTT_HOST=192.168.123.99
-      - POLLING="*/5 * * * *"
+      - POLLING=*/5 * * * *
     volumes:
       - ./vcontrold.xml:/etc/vcontrold/vcontrold.xml
       - ./vito.xml:/etc/vcontrold/vito.xml
