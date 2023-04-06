@@ -1,9 +1,8 @@
-Warmwassersolltemperatur
 Aussentemperatur
+Warmwassersolltemperatur
 Warmwassertemperaturoben
-getTempRaumSollNormal
-getTempRaumSollRed
-RaumsolltemperaturreduzierterBetrieb
-VorlaufsolltemperaturHK1
-RuecklauftemperaturSekundaer1
 getTempPufferIst
+getTempSekVL
+getTempSekRL
+getTempPriVL
+getTempPriRL
