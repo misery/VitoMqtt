@@ -1,8 +1,8 @@
-ARG ALPINE_VERSION=3.16
+ARG ALPINE_VERSION=3.17
 
 FROM alpine:$ALPINE_VERSION AS builder
 
-ENV VCONTROLD=0.98.11
+ENV VCONTROLD=0.98.12
 WORKDIR /src
 
 RUN apk upgrade -a -U && apk add linux-headers cmake make g++ libxml2-dev
