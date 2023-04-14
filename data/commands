@@ -6,7 +6,7 @@ getTempSekVL
 getTempSekRL
 getTempPriVL
 getTempPriRL
-getBetriebsartHK1
-getBetriebsartHK2
+getBetriebsartHK1Str
+getBetriebsartHK2Str
 getStdVerdichter
 getStartsVerdichter

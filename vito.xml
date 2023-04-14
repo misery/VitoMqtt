@@ -582,13 +582,13 @@
 			<unit>UN</unit>
 			<description>Bedienung HK1 - Heizkreis 1: Neigung Kuehlkennlinie (0..35)</description>
 		</command>
-		<command name="getBetriebsartHK1" protocmd="getaddr">
+		<command name="getBetriebsartHK1Str" protocmd="getaddr">
 			<addr>B000</addr>
 			<len>1</len>
 			<unit>BA</unit>
 			<description>Bedienung HK1 - Heizkreis 1: Betriebsart (0..4)</description>
 		</command>
-		<command name="getBetriebsartHK2" protocmd="getaddr">
+		<command name="getBetriebsartHK2Str" protocmd="getaddr">
 			<addr>B001</addr>
 			<len>1</len>
 			<unit>BA</unit>

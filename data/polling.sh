@@ -24,8 +24,13 @@ echo "#!/bin/sh" > $TPL
 COUNT=`wc -l /data/commands | cut -d ' '  -f1`
 for i in `seq 1 $COUNT`;
 do
-	echo "if [[ \"\$E$i\" == \"OK\" ]]; then" >> $TPL
-	echo "mosquitto_pub -i $MQTT_ID -h $MQTT_HOST -p $MQTT_PORT -t $MQTT_TOPIC/\$C$i -m '\$$i'" >> $TPL
+	echo "if [ \"\$E$i\" = \"OK\" ]; then" >> $TPL
+		echo "if [ \"\$C$i\" = \"*Str\" ]; then" >> $TPL
+			echo "value='\$R$i'" >> $TPL
+		echo "else" >> $TPL
+			echo "value='\$$i'" >> $TPL
+		echo "fi" >> $TPL
+		echo "mosquitto_pub -i $MQTT_ID -h $MQTT_HOST -p $MQTT_PORT -t $MQTT_TOPIC/\$C$i -m \"\$value\"" >> $TPL
 	echo "fi" >> $TPL
 done
 
