@@ -5,7 +5,7 @@ FROM alpine:$ALPINE_VERSION AS builder
 ENV VCONTROLD=0.98.12
 WORKDIR /src
 
-RUN apk upgrade -a -U && apk add linux-headers cmake make g++ libxml2-dev
+RUN apk --no-cache upgrade -a -U && apk --no-cache add linux-headers cmake make g++ libxml2-dev
 
 RUN wget -O vcontrold.tar.gz https://github.com/openv/vcontrold/releases/download/v$VCONTROLD/vcontrold_$VCONTROLD.orig.tar.gz && \
     tar xf vcontrold.tar.gz && cd vcontrold-${VCONTROLD} && \
@@ -13,7 +13,7 @@ RUN wget -O vcontrold.tar.gz https://github.com/openv/vcontrold/releases/downloa
 
 
 FROM alpine:$ALPINE_VERSION
-RUN apk upgrade -a -U && apk add mosquitto-clients libxml2 supervisor
+RUN apk --no-cache upgrade -a -U && apk --no-cache add mosquitto-clients libxml2 supervisor
 
 COPY --from=builder /usr/sbin/vcontrold /usr/sbin/vcontrold
 COPY --from=builder /usr/bin/vclient /usr/bin/vclient
