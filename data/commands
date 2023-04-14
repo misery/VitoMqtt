@@ -1,8 +1,12 @@
 Aussentemperatur
 Warmwassersolltemperatur
-Warmwassertemperaturoben
+getTempWWIstOben
 getTempPufferIst
 getTempSekVL
 getTempSekRL
 getTempPriVL
 getTempPriRL
+getBetriebsartHK1
+getBetriebsartHK2
+getStdVerdichter
+getStartsVerdichter
