@@ -34,7 +34,7 @@ COUNT=`wc -l $cmds | cut -d ' '  -f1`
 for i in `seq 1 $COUNT`;
 do
 	echo "if [ \"\$E$i\" = \"OK\" ]; then" >> $TPL
-		echo "if [[ \"\$C$i\" = \"*Str\" ]]; then" >> $TPL
+		echo "if [[ \"\$C$i\" = *Str ]]; then" >> $TPL
 			echo "value='\$R$i'" >> $TPL
 		echo "else" >> $TPL
 			echo "value='\$$i'" >> $TPL
