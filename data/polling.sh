@@ -45,6 +45,12 @@ do
 done
 
 vclient -f $cmds -t $TPL -x $SCRIPT
-rm "$TPL"
-rm "$SCRIPT"
+
+if [ -f "$TPL" ]; then
+	rm "$TPL"
+fi
+
+if [ -f "$SCRIPT" ]; then
+	rm "$SCRIPT"
+fi
 
