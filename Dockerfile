@@ -13,7 +13,7 @@ RUN wget -O vcontrold.tar.gz https://github.com/openv/vcontrold/releases/downloa
 
 
 FROM alpine:$ALPINE_VERSION
-RUN apk --no-cache upgrade -a -U && apk --no-cache add mosquitto-clients libxml2 supervisor
+RUN apk --no-cache upgrade -a -U && apk --no-cache add mosquitto-clients libxml2 supervisor bash
 
 COPY --from=builder /usr/sbin/vcontrold /usr/sbin/vcontrold
 COPY --from=builder /usr/bin/vclient /usr/bin/vclient

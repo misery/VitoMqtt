@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-PID=`pidof vcontrold`
+PID=$(pidof vcontrold)
 if [ -z "$PID" ]; then
 	echo "vcontrold nicht vorhanden, exit"
 	exit 0
@@ -27,6 +27,7 @@ MQTT_TOPIC=VitoMqtt
 MQTT_ID="${MQTT_TOPIC}-${HOSTNAME}$cmdName"
 
 TPL="/tmp/mqtt$cmdName.tpl"
+SCRIPT="/tmp/mqtt$cmdName.sh"
 
 echo "#!/bin/sh" > $TPL
 COUNT=`wc -l $cmds | cut -d ' '  -f1`
@@ -43,4 +44,7 @@ do
 	echo "fi" >> $TPL
 done
 
-vclient -f $cmds -t $TPL -x /tmp/mqtt$cmdName.sh
+vclient -f $cmds -t $TPL -x $SCRIPT
+rm "$TPL"
+rm "$SCRIPT"
+
