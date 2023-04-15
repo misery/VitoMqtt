@@ -29,7 +29,7 @@ MQTT_ID="${MQTT_TOPIC}-${HOSTNAME}$cmdName"
 TPL="/tmp/mqtt$cmdName.tpl"
 SCRIPT="/tmp/mqtt$cmdName.sh"
 
-echo "#!/bin/sh" > $TPL
+echo "#!/bin/bash" > $TPL
 COUNT=`wc -l $cmds | cut -d ' '  -f1`
 for i in `seq 1 $COUNT`;
 do
