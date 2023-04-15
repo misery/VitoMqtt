@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 PID=$(pidof vcontrold)
 if [ -z "$PID" ]; then
@@ -32,9 +32,7 @@ do
 		for (( n=0; n < ${#strarr[*]}; n++))
 		do
 			echo "${strarr[n]}" | tr -d '\n' >> $tmpfile
-			if [ "${strarr[n+1]}" != "" ]; then
-				echo >> $tmpfile
-			fi
+			echo >> $tmpfile
 		done
 
 		/data/polling.sh $tmpfile
