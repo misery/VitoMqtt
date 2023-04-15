@@ -3,7 +3,7 @@
 PID=$(pidof vcontrold)
 if [ -z "$PID" ]; then
 	echo "vcontrold nicht vorhanden, exit"
-#	exit 0
+	exit 0
 fi
 
 if [ -z "$MQTT_HOST" ]; then
