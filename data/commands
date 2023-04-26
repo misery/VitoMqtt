@@ -10,3 +10,5 @@ getBetriebsartHK1Str
 getBetriebsartHK2Str
 getStdVerdichter
 getStartsVerdichter
+getStatusVentilWW
+getStatusSekP
