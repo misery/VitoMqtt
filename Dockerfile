@@ -21,4 +21,4 @@ COPY vcontrold.xml /etc/vcontrold/vcontrold.xml
 COPY vito.xml /etc/vcontrold/vito.xml
 COPY data /data/
 
-ENTRYPOINT ["supervisord", "-c", "/data/supervisord.conf"]
+CMD ["/usr/bin/supervisord", "-c", "/data/supervisord.conf"]
