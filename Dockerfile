@@ -19,6 +19,7 @@ COPY --from=builder /usr/sbin/vcontrold /usr/sbin/vcontrold
 COPY --from=builder /usr/bin/vclient /usr/bin/vclient
 COPY vcontrold.xml /etc/vcontrold/vcontrold.xml
 COPY vito.xml /etc/vcontrold/vito.xml
+COPY supervisord.conf /etc/supervisord.conf
 COPY data /data/
 
-CMD ["/usr/bin/supervisord", "-c", "/data/supervisord.conf"]
+CMD ["/usr/bin/supervisord"]
