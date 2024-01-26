@@ -25,8 +25,8 @@ jobs:
           flavor: |
             latest=false
           tags: |
+            type=match,pattern=\d.\d
             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
-            type=semver,pattern={{version}}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
