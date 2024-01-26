@@ -1,6 +1,6 @@
 name: "VitoMqtt"
 description: "Mqtt interface to vcontrold"
-version: "0.2"
+version: "0.3"
 url: "https://github.com/misery/VitoMqtt/"
 slug: "vitomqtt"
 init: false
