@@ -16,7 +16,7 @@ if [ -z "$MQTT_PORT" ]; then
 fi
 
 if [ "$1" = "" ]; then
-	cmds="/data/commands"
+	cmds="/root/commands"
 else
 	cmds="$1"
 fi

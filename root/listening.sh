@@ -42,7 +42,7 @@ do
 			done
 		fi
 
-		/data/polling.sh $tmpfile
+		polling.sh $tmpfile
 
 		if [ -f "$tmpfile" ]; then
 			rm "$tmpfile"
