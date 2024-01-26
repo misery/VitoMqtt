@@ -3,10 +3,10 @@
   <unix>
      <config>
 	<serial>
-		<tty>/dev/ttyUSB0</tty>
+		<tty>/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0</tty>
 	</serial>
-        <username>nobody</username>
-        <groupname>dialout</groupname>
+        <username>root</username>
+        <groupname>root</groupname>
 	<net>
 		<port>3002</port>
 	</net>
